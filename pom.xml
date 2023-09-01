@@ -28,9 +28,9 @@
             <sonar.host.url>
                 http://localhost:9099 
             </sonar.host.url>
-            <sonar.token>
-                sqp_ec239d1f3b0baf2700ba34c7dc352dd58185593d
-            </sonar.token>
+            <sonar.login>
+               sqp_ec239d1f3b0baf2700ba34c7dc352dd58185593d
+            </sonar.login>
             <settings> <!-- This is causing the error -->
                 <!-- ... Some settings ... -->
             </settings>
