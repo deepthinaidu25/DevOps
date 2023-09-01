@@ -1,0 +1,6 @@
+projectKey=DevOps
+serverUrl=http://localhost:9099
+serverVersion=10.1.0.73491
+dashboardUrl=http://localhost:9099/dashboard?id=DevOps
+ceTaskId=AYpLGp1qgNXBUp8Ve4Ps
+ceTaskUrl=http://localhost:9099/api/ce/task?id=AYpLGp1qgNXBUp8Ve4Ps
