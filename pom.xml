@@ -17,8 +17,36 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+    <profiles>
+    <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <!-- Optional URL to server. Default value is http://localhost:9000 -->
+            <sonar.host.url>
+                http://localhost:9099 
+            </sonar.host.url>
+            <sonar.token>
+                sqp_ec239d1f3b0baf2700ba34c7dc352dd58185593d
+            </sonar.token>
+            <settings> <!-- This is causing the error -->
+                <!-- ... Some settings ... -->
+            </settings>
+        </properties>
+    </profile>
+</profiles>
+
 
   <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+<dependency>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>3.9.1.2184</version>
+</dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
