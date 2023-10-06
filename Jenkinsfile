@@ -1,3 +1,4 @@
+groovy
 pipeline {
     agent any
     
@@ -38,7 +39,7 @@ pipeline {
     
     post {
         always {
-            node {
+            node('master') { // Add the label 'master' here
                 // Archive build artifacts (if needed)
                 archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
