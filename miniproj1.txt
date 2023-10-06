@@ -1,0 +1,10 @@
+package miniproj1;
+
+public class devops { 
+	public static void main(String[] args) {
+    System.out.println("Hello, DevOps!");
+}
+	
+
+}
+ can you providde me  a pom file for this
