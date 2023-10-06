@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define your SonarQube project key and token as environment variables
         SONAR_PROJECT_KEY = 'miniproj1'
-        SONAR_TOKEN = credentials('SonarQube Token')
+        SONAR_TOKEN = credentials('sqp_c34a7eae26b17988901f809b97d61f6ee00c681')
     }
     
     stages {
@@ -37,20 +37,23 @@ pipeline {
         // Add more stages for deployment or other steps as needed
     }
     
-    post {
-        always {
+   post {
+    always {
+        node {
             // Archive build artifacts (if needed)
             archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
         }
-        
-        success {
-            // Send notifications or perform actions on successful build
-            echo 'Build and analysis completed successfully.'
-        }
-        
-        failure {
-            // Send notifications or perform actions on build failure
-            echo 'Build and analysis failed.'
-        }
+    }
+
+    success {
+        // Send notifications or perform actions on successful build
+        echo 'Build and analysis completed successfully.'
+    }
+
+    failure {
+        // Send notifications or perform actions on build failure
+        echo 'Build and analysis failed.'
     }
 }
+
+    
