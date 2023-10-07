@@ -43,9 +43,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            // Add any post-build actions or notifications here
-        }
-    }
+   
 }
