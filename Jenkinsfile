@@ -1,10 +1,9 @@
-groovy
 pipeline {
     agent any
     
     environment {
         // Define your SonarQube project key as an environment variable
-        SONAR_PROJECT_KEY = 'miniproj1'
+        SONAR_PROJECT_KEY = 'sqp_c34a7eae26b17988901f809b97d61f6ee00c681'
     }
     
     stages {
@@ -39,7 +38,7 @@ pipeline {
     
     post {
         always {
-            node('master') { // Add the label 'master' here
+            node {
                 // Archive build artifacts (if needed)
                 archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
