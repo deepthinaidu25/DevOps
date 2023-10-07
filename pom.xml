@@ -29,7 +29,7 @@
                 http://localhost:9099 
             </sonar.host.url>
             <sonar.login>
-               sqp_ec239d1f3b0baf2700ba34c7dc352dd58185593d
+              sqp_c34a7eae26b17988901f809b97d61f6ee00c6811
             </sonar.login>
             <settings> <!-- This is causing the error -->
                 <!-- ... Some settings ... -->
