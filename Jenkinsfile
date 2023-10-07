@@ -54,4 +54,4 @@ pipeline {
             echo 'Build and analysis failed.'
         }
     }
-}
+
