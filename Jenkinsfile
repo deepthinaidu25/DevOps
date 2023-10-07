@@ -34,24 +34,6 @@ pipeline {
         }
         
         // Add more stages for deployment or other steps as needed
-    }
-    
-  /*  post {
-        always {
-            node {
-                // Archive build artifacts (if needed)
-                archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
-            }
         }
-    }
-        success {
-            // Send notifications or perform actions on successful build
-            echo 'Build and analysis completed successfully.'
-        }
-
-        failure {
-            // Send notifications or perform actions on build failure
-            echo 'Build and analysis failed.'
-        } */
     }
 
