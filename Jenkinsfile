@@ -36,7 +36,5 @@ pipeline {
 
         // Add more stages for deployment or other steps as needed
     }
-
-    
-    }
+}
 
