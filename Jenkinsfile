@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define your SonarQube project key and token as environment variables
         SONAR_PROJECT_KEY = 'miniproj1'
-        SONAR_TOKEN = credentials('sqp_c34a7eae26b17988901f809b97d61f6ee00c6811')
+        SONAR_TOKEN = credentials('sqb_ee1dd511f80a5acd1f3144f9ceb8f68e70904794')
     }
 
     stages {
