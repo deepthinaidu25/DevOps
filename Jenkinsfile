@@ -43,7 +43,7 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
         }
-
+    }
         success {
             // Send notifications or perform actions on successful build
             echo 'Build and analysis completed successfully.'
