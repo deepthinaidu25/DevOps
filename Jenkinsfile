@@ -36,7 +36,7 @@ pipeline {
         // Add more stages for deployment or other steps as needed
     }
     
-  //  post {
+  /*  post {
         always {
             node {
                 // Archive build artifacts (if needed)
@@ -52,6 +52,6 @@ pipeline {
         failure {
             // Send notifications or perform actions on build failure
             echo 'Build and analysis failed.'
-        }//
+        } */
     }
 
