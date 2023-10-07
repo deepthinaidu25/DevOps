@@ -20,6 +20,10 @@ pipeline {
         }
 
         stage('Run My Script') {
+            agent {
+                // Specify the label of the agent where you want to run your script
+                label 'your-agent-label'
+            }
             steps {
                 // Execute your Windows batch script in the background
                 bat 'start /B my_script.bat'
