@@ -1,40 +1,51 @@
 pipeline {
     agent any
 
-    environment {
-        // Define your SonarQube project key and token as environment variables
-        SONAR_PROJECT_KEY = 'miniproj1'
-        SONAR_TOKEN = credentials('sqb_ee1dd511f80a5acd1f3144f9ceb8f68e70904794')
-    }
-
     stages {
-        stage('Checkout') {
+        stage('Checkout SCM') {
             steps {
-                // Checkout the source code from your Git repository
+                // Define steps for checking out your source code from your SCM system here
                 checkout scm
             }
         }
 
-        stage('Build and Test') {
+        stage('Build') {
             steps {
-                // Build your project using Maven
+                // Define steps for building your project here
                 sh 'mvn clean install'
+            }
+        }
 
-                // Run tests (if applicable)
+        stage('Test') {
+            steps {
+                // Define steps for running tests here
                 sh 'mvn test'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
-                // Execute SonarQube analysis using the SonarQube Scanner for Maven
-                withSonarQubeEnv('SonarQube Server') {
-                    sh "mvn sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.login=${SONAR_TOKEN}"
+                // Define steps for running SonarQube analysis here
+                script {
+                    def scannerHome = tool 'SonarQubeScanner'
+                    withSonarQubeEnv('SonarQube_Server_Name') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
                 }
             }
         }
 
-        // Add more stages for deployment or other steps as needed
+        stage('Deploy') {
+            steps {
+                // Define steps for deploying your project here
+                sh 'mvn deploy'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Add any post-build actions or notifications here
+        }
     }
 }
-
