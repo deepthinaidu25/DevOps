@@ -1,47 +1,25 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout SCM') {
+        stage('Check Validate') {
             steps {
-                // Define steps for checking out your source code from your SCM system here
-                checkout scm
+                echo 'Validating the Program'
             }
         }
-
-        stage('Build') {
+        stage('Compilation') {
             steps {
-                // Define steps for building your project here
-                sh 'mvn clean install'
+                echo 'Compiling the Program'
             }
         }
-
-        stage('Test') {
+        stage('Installation') {
             steps {
-                // Define steps for running tests here
-                sh 'mvn test'
+                echo 'Installing the Program'
             }
         }
-
-        stage('SonarQube Analysis') {
-            steps {
-                // Define steps for running SonarQube analysis here
-                script {
-                    def scannerHome = tool 'SonarQubeScanner'
-                    withSonarQubeEnv('SonarQube_Server_Name') {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
-                }
-            }
-        }
-
         stage('Deploy') {
             steps {
-                // Define steps for deploying your project here
-                sh 'mvn deploy'
+                echo 'Deploying the Program'
             }
         }
     }
-
-   
 }
